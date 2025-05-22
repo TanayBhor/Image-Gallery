@@ -38,30 +38,24 @@ const Gallery = ({searchTerm }) => {
 
         <div className="gallery-images">
 
-          {/* {photos.map((pic)=>(
+          {photos.map((pic) => (
+            <div key={pic.id} className="image-wrapper">
 
-            <img key={pic.id} src={pic.urls.regular}/>
+              <img
+                src={pic.urls.regular}
+                alt={pic.alt_description || 'Unsplash Image'}
+                className="gallery-image"
+              />
 
-          ))} */}
-
-        {photos.map((pic) => (
-          <div key={pic.id} className="image-wrapper">
-
-            <img
-              src={pic.urls.regular}
-              alt={pic.alt_description || 'Unsplash Image'}
-              className="gallery-image"
-            />
-
-            <div className="overlay">
-              <div className='user-details'>
-                <img className='user-image' src={pic.user.profile_image.small} alt="" />
-                <p className="user-name">{pic.user.name}</p>
+              <div className="overlay">
+                <div className='user-details'>
+                  <img className='user-image' src={pic.user.profile_image.small} alt="" />
+                  <p className="user-name">{pic.user.name}</p>
+                </div>
               </div>
-            </div>
 
-          </div>
-        ))}
+            </div>
+          ))}
 
         </div>
 

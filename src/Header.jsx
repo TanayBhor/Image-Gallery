@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Header.css'
 import { IoIosSearch } from "react-icons/io";
+import { IoSunnyOutline } from "react-icons/io5";
+import { IoMoonOutline } from "react-icons/io5";
 
 const Header = ({ searchValue, setSearchValue, onSearchSubmit }) => {
 
@@ -16,19 +18,28 @@ const Header = ({ searchValue, setSearchValue, onSearchSubmit }) => {
     setSearchValue('');
   };
 
+  const [checked, setChecked] = useState(true);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
   return (
+    <>
     <div className="container">
+
+      <div className='search-options'>
+
+        <a href="">Photos</a>
+        <a href="">Illustrations</a>
+
+      </div>
 
       <form onSubmit={handleSubmit} className='search-bar-container'>
 
-        <div className='search-options'>
-          <a href="">Photos</a>
-          <a href="">Illustrations</a>
-        </div>
-
         <div className="search-bar">
 
-          <input type="text" className="search-input" placeholder="Search..." value={searchValue} onChange={handleInputChange}/>
+          <input className="search-input" type="text" placeholder="Search..." value={searchValue} onChange={handleInputChange}/>
 
           <button type="submit" className="search-icon">
             <IoIosSearch className='svg'/>
@@ -38,32 +49,54 @@ const Header = ({ searchValue, setSearchValue, onSearchSubmit }) => {
 
       </form>
 
-        <div className='options-container'>
+      <label className="switch">
 
-          <div className='search-suggestions'>
+        <input
+          type="checkbox"
+          id="checkbox"
+          checked={checked}
+          onChange={handleChange}
+        />
 
-            <a href="">Nature</a>
-            <a href="">People</a>
-            <a href="">Minimalism</a>
+        <span className="dark-mode-button">
 
-          </div>
+          {checked ? (<IoMoonOutline className='icon icon-moon'/>) : (<IoSunnyOutline className='icon icon-sun'/>)}
+          
+        </span>
 
-          <div className='drop-down-container'>
+      </label>
+    </div>
+    <div>
+      
+    <div className="header-spacer"  style={{height: '4rem'}}/>
 
-            <select name="" id="">
-              <option value="volvo">Orientation</option>
-              <option value="volvo">All</option>
-              <option value="saab">Portrait</option>
-              <option value="mercedes">Landscape</option>
-              <option value="audi">Square</option>
-            </select>
+    <div className='options-container'>
 
-          </div>
+      <div className='search-suggestions'>
 
-        </div>
+        <a href="">Nature</a>
+        <a href="">People</a>
+        <a href="">Minimalism</a>
+
+      </div>
+
+      <div className='drop-down-container'>
+
+        <select name="" id="">
+          <option value="volvo">Orientation</option>
+          <option value="volvo">All</option>
+          <option value="saab">Portrait</option>
+          <option value="mercedes">Landscape</option>
+          <option value="audi">Square</option>
+        </select>
+
+      </div>
+
+    </div>
 
         {/* <div className="glow"></div> */}
     </div>
+    </>
   )
 }
 
