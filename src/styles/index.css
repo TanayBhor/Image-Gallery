@@ -1,23 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-navbar: #f5f5f5;
+  --color-input-bg: #e0e0e0;
+  --color-input-text: #000000;
+  --color-icon-bg: #cccccc;
+  --color-dropdown-bg: #ffffff;
+  --color-dropdown-text: #000000;
+}
+
+.dark {
+  --color-bg: #1a1a1a;
+  --color-text: #ffffff;
+  --color-navbar: #000000;
+  --color-input-bg: #1e1e1e;
+  --color-input-text: #ffffff;
+  --color-icon-bg: #000000;
+  --color-dropdown-bg: #333333;
+  --color-dropdown-text: #ffffff;
+}
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body{
-    height: 100vh;
-    width: 100vw;
-    font-family: Roboto, 'sans-serif';
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto, 'sans-serif';
 }
 
 body{
-    padding: 0 2.2rem;
-    background-color: rgb(0, 0, 0);
+  padding: 0 2.2rem;
+  background-color: var(--color-bg);
+  transition: background-color 1s ease, color 1s ease;
 }
 
 a{
-    color: white;
-    text-decoration: none;
+  color: var(--color-text);
+  text-decoration: none;
 }

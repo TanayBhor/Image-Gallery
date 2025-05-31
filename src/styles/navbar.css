@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 .container {
   height: 4.5rem;
   padding: 0 2.2rem;
@@ -12,7 +14,7 @@
   right: 0;
   z-index: 1000;
 
-  background-color: black;
+  background-color: var(--color-bg);
 }
 
 .search-bar-container{
@@ -25,9 +27,10 @@
 }
 
 .search-options{
+  font-weight: bold;
   display: flex;
-  gap: 20px;
-  font-size: 1.5rem;
+  /* gap: 20px; */
+  font-size: 1.8rem;
 }
 
 .search-bar {
@@ -124,6 +127,11 @@
   align-items: end;
   justify-content: space-between;
   margin-bottom: 2rem;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .search-suggestions{
@@ -178,4 +186,12 @@
 .icon-moon, .icon-sun{
   font-size: 24px;
   color: white;
+}
+
+
+.loading{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

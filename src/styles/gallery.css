@@ -1,6 +1,5 @@
 .gallery-container{
   height: 100%;
-  width: 100%;
 }
 
 .gallery-images{
@@ -10,13 +9,14 @@
 }
 
 .image-wrapper {
-  background-color: crimson;
   position: relative;
   overflow: hidden;
   /* border-radius: 8px; */
 }
 
 .gallery-image{
+
+  opacity: 0;
   display: block;
   margin-bottom: 10px;
   width: 100%;
@@ -24,6 +24,10 @@
 
   transition: opacity 0.3s ease;
   background: linear-gradient(rgba(0, 0, 0, 0.566), rgba(0, 0, 0, 0.588), rgba(0, 0, 0, 0.46));
+}
+
+.gallery-image.loaded {
+  opacity: 1;
 }
 
 .overlay {
@@ -64,9 +68,4 @@
 .user-name {
   color: white;
   font-weight: bold;
-}
-
-.loading{
-  color: white;
-  font-size: 4rem;
 }
