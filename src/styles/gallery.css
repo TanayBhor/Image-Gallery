@@ -1,8 +1,9 @@
-.gallery-container{
+.gallery-container {
   height: 100%;
+  margin-top: 8rem;
 }
 
-.gallery-images{
+.gallery-images {
   width: 100%;
   columns: 300px;
   gap: 10px;
@@ -14,7 +15,7 @@
   /* border-radius: 8px; */
 }
 
-.gallery-image{
+.gallery-image {
 
   opacity: 0;
   display: block;
@@ -23,7 +24,6 @@
   border-radius: 15px;
 
   transition: opacity 0.3s ease;
-  background: linear-gradient(rgba(0, 0, 0, 0.566), rgba(0, 0, 0, 0.588), rgba(0, 0, 0, 0.46));
 }
 
 .gallery-image.loaded {
@@ -53,7 +53,7 @@
   opacity: 1;
 }
 
-.user-details{
+.user-details {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,11 +61,27 @@
   margin: 0 0 0.7rem 0.35rem;
 }
 
-.user-image{
+.user-image {
   border-radius: 20px;
 }
 
 .user-name {
   color: white;
   font-weight: bold;
+}
+
+@media(max-width:678px) {
+  .gallery-images {
+    width: 100%;
+    columns: 200px;
+    gap: 10px;
+  }
+}
+
+@media(max-width:500px) {
+  .gallery-images {
+    width: 100%;
+    columns: 150px;
+    gap: 10px;
+  }
 }

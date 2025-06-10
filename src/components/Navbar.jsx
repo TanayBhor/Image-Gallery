@@ -62,52 +62,50 @@ const Navbar = () => {
 
   return (
     <>
-    <div className="container">
+      <div className="container">
 
-      <div className='search-options'>
-        <Link to="/">Photos</Link>
-      </div>
-
-      <form onSubmit={handleSubmit} className='search-bar-container'>
-
-        <div className="search-bar">
-
-          <input 
-          className="search-input" 
-          type="text" 
-          placeholder="Search..." 
-          value={searchValue} 
-          onChange={handleInputChange}/>
-
-          <button type="submit" className="search-icon">
-            <IoIosSearch className='svg'/>
-          </button>
-
+        <div className='search-options'>
+          <Link to="/">Photos</Link>
         </div>
 
-      </form>
+        <form onSubmit={handleSubmit} className='search-bar-container'>
+
+          <div className="search-bar">
+
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Search..."
+              value={searchValue}
+              onChange={handleInputChange} />
+
+            <button type="submit" className="search-icon">
+              <IoIosSearch className='svg' />
+            </button>
+
+          </div>
+
+        </form>
 
 
-      <label className="switch">
+        <label className="switch">
 
-        <input
-          type="checkbox"
-          checked={darkMode}
-          onChange={toggleTheme}
-        />
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={toggleTheme}
+          />
 
-        <span className="dark-mode-button">
+          <span className="dark-mode-button">
 
-          {darkMode ? (<IoMoonOutline className='icon icon-moon'/>) : (<IoSunnyOutline className='icon icon-sun'/>)}
-          
-        </span>
+            {darkMode ? (<IoMoonOutline className='icon icon-moon' />) : (<IoSunnyOutline className='icon icon-sun' />)}
 
-      </label>
-    </div>
+          </span>
 
-    <div>
-      
-    <div className="header-spacer"  style={{height: '4rem'}}/>
+        </label>
+      </div>
+
+      {/* <div className="header-spacer"  style={{height: '4rem'}}/>
 
     <div className='options-container'>
 
@@ -121,11 +119,11 @@ const Navbar = () => {
 
       <div className='drop-down-container'>
 
-        {/* <label 
+       <label 
         htmlFor="orientation-select" 
         style={{ marginRight: '0.5rem', color: 'var(--color-text)' }}>
           Orientation:
-        </label> */}
+        </label> 
 
 
         <select 
@@ -139,11 +137,9 @@ const Navbar = () => {
 
         </select>
 
-      </div>
+      </div> 
 
-    </div>
-
-    </div>
+    </div>*/}
     </>
   )
 }
